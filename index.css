@@ -5,7 +5,7 @@
 
     --text-color: hsl(0, 0%, 100%);
     --footer-text-color: hsl(240, 2%, 79%);
-    --body-copy: hsl(207, 13%, 34%);
+    --body-copy-color: hsl(209, 12%, 34%);
     --footer-background-color: hsl(240, 10%, 16%);
 
     --background-red-gradient: hsl(13, 100%, 72%);
@@ -14,9 +14,13 @@
     --background-intro-color: linear-gradient(135deg, #FF8F71 0%, #FF3E55 100%);
 
     --background-body-blue: hsl(237, 17%, 21%);
-    --bakground-body-desaturated-blue: hsl(237, 23%, 32%);
+    --background-body-desaturated-blue: hsl(237, 23%, 32%);
+
+    --bg-body: linear-gradient(135deg, var(--background-body-blue) 0%, var(--background-body-desaturated-blue) 100%);
 
     --body-copy-font-size: 1rem;
+    --body-copy-letter-spacing: 0.03125rem;
+    --letter-spacing-headers: -0.075rem;
 
     --anchor-button-height: 3rem;
     --anchor-button-width: 8.5625rem;
@@ -26,6 +30,11 @@
 
     --main-font: 'Overpass', sans-serif;
     --secondary-font: 'Ubuntu', sans-serif;
+
+    --article-width: 33.75rem;
+    --article-header-font-size: 1.75rem;
+
+    --h1-font-size: 2.5rem;
 }
 
 
@@ -57,7 +66,7 @@ body {
 
 .section--intro {
     background-image: var(--background-intro-color);
-    border-radius: 0px 0px 0px 100px;
+    border-radius: 0px 0px 0px 6.25rem;
     overflow: hidden;
 }
 
@@ -91,7 +100,7 @@ body {
 
 .h1--hero {
     font-size: 4rem;
-    letter-spacing: -.12rem;
+    letter-spacing: -.075rem;
 }
 
 .ul {
@@ -129,6 +138,10 @@ body {
     border: 1px solid var(--text-color);
 }
 
+.p {
+    font-weight: 400;
+}
+
 .p--hero {
     font-size: 1.25rem;
     margin-top: .5rem;
@@ -148,6 +161,105 @@ body {
     gap: 2rem;
 }
 
+
 .section--productDesc {
+    height: 63rem;
+    overflow-x: hidden;
+    padding-left: var(--page-padding-left);
+    padding-top: 10rem;
     color: var(--primary-dark-blue);
+    display: flex;
+    position: relative;
+}
+
+.header--productDesc {
+    padding-right: 20rem;
+    width: 100vw;
+}
+
+.img--productDesc {
+    position: absolute;
+    right: -17rem;
+    top: 4.5rem;
+}
+
+.article {
+    width: var(--article-width);
+}
+
+.h1 {
+    font-size: var(--h1-font-size);
+    letter-spacing: var(--letter-spacing-headers);
+}
+
+.h1--productDesc {
+    letter-spacing: var(--letter-spacing-headers);
+    font-size: var(--h1-font-size);
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.article--technical:first-child>.p--technical {
+    margin-bottom: 4.5rem;
+}
+
+.article>.p {
+    font-size: var(--body-copy);
+    letter-spacing: var(--body-copy-letter-spacing);
+    line-height: 175%;
+}
+
+.article--technical>.p {
+    color: var(--body-copy-color);
+}
+
+.header-technical {
+    font-size: var(--article-header-font-size);
+    margin-bottom: 1.5rem;
+}
+
+.section--infrastructure {
+    background-image: var(--bg-body);
+    border-radius: 0 6.25rem;
+    height: 25rem;
+}
+
+.block--sectionWrapper {
+    height: 100%;
+    width: 100%;
+    background-image: url("./images/bg-pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-position: top 83% left -50%;
+    position: relative;
+}
+
+.img--infrastructure {
+    position: absolute;
+    top: -4.5rem;
+    left: 7.75rem;
+}
+
+.article--infrastructure {
+    margin-left: 46rem;
+    padding-top: 7.5rem;
+}
+
+.p--infrastructure {
+    color: var(--text-color);
+}
+
+.h1--infrastructure {
+    margin-bottom: .5rem;
+}
+
+.section--technicalCont {
+    display: flex;
+    position: relative;
+    height: 63rem;
+}
+
+.img--technicalCont {
+    position: absolute;
+    top: 7rem;
+    left: -17.5rem;
 }
