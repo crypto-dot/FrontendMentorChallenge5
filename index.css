@@ -1,0 +1,110 @@
+:root {
+    --primary-red: hsl(356, 100%, 66%);
+    --primary-light-red: hsl(355, 100%, 74%);
+    --primary-dark-blue: hsl(208, 49%, 24%);
+
+    --text-color: hsl(0, 0%, 100%);
+    --footer-text-color: hsl(240, 2%, 79%);
+    --body-copy: hsl(207, 13%, 34%);
+    --footer-background-color: hsl(240, 10%, 16%);
+
+    --background-red-gradient: hsl(13, 100%, 72%);
+    --background-light-red-gradient: hsl(353, 100%, 62%);
+
+    --background-intro-color: linear-gradient(135deg, #FF8F71 0%, #FF3E55 100%);
+
+    --background-body-blue: hsl(237, 17%, 21%);
+    --bakground-body-desaturated-blue: hsl(237, 23%, 32%);
+
+    --body-copy-font-size: 1rem;
+
+    --anchor-button-height: 3rem;
+    --anchor-button-width: 8.5625rem;
+
+    --main-font: 'Overpass', sans-serif;
+    --secondary-font: 'Ubuntu', sans-serif;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    color: var(--text-color);
+}
+
+.a {
+    display: inline-block;
+    color: var(--text-color);
+    font-family: var(--main-font);
+    text-decoration: none;
+}
+
+.a--rightNav,
+.ul--leftNav {
+    font-weight: 600;
+}
+
+.section--intro {
+    background-color: var(--background-intro-color);
+    background-image: url(./images/bg-pattern-intro-desktop.svg), var(--background-intro-color);
+    background-position: center;
+}
+
+.heading--intro {
+    display: flex;
+    gap: 4rem;
+    padding: 3.5rem 10.5rem 20rem 10.5rem;
+    align-items: center;
+}
+
+.ul {
+    display: flex;
+    list-style: none;
+}
+
+.svg--arrow {
+    margin-left: .3rem;
+}
+
+.nav {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+
+.a.whiteFilled {
+    background-color: var(--text-color);
+    color: var(--primary-red);
+}
+
+.whiteFilled,
+.whiteOutline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    width: var(--anchor-button-width);
+    height: var(--anchor-button-height);
+}
+
+.svg--logoHeader {}
+
+.ul--leftNav,
+.ul--rightNav {
+    align-items: center;
+}
+
+.ul--leftNav {
+    gap: 2rem;
+}
+
+.ul--rightNav {
+    gap: 2rem;
+}
