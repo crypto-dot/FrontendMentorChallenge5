@@ -21,6 +21,9 @@
     --anchor-button-height: 3rem;
     --anchor-button-width: 8.5625rem;
 
+    --page-padding-left: 10.25rem;
+    --page-padding-right: var(--page-padding-left);
+
     --main-font: 'Overpass', sans-serif;
     --secondary-font: 'Ubuntu', sans-serif;
 }
@@ -43,24 +46,52 @@ body {
     color: var(--text-color);
     font-family: var(--main-font);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .a--rightNav,
-.ul--leftNav {
+.ul--leftNav,
+.a--hero {
     font-weight: 600;
 }
 
 .section--intro {
-    background-color: var(--background-intro-color);
-    background-image: url(./images/bg-pattern-intro-desktop.svg), var(--background-intro-color);
-    background-position: center;
+    background-image: var(--background-intro-color);
+    border-radius: 0px 0px 0px 100px;
+    overflow: hidden;
+}
+
+.block--wrapperIntro {
+    height: 100%;
+    width: 100%;
+    background-image: url(./images/bg-pattern-intro-desktop.svg);
+    background-position: 25% 52%;
+    padding-bottom: 9.25rem;
 }
 
 .heading--intro {
     display: flex;
     gap: 4rem;
-    padding: 3.5rem 10.5rem 20rem 10.5rem;
+    padding: 3.55rem 10.25rem 9rem 10.25rem;
     align-items: center;
+}
+
+.section--hero {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.block--hero {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.h1--hero {
+    font-size: 4rem;
+    letter-spacing: -.12rem;
 }
 
 .ul {
@@ -94,7 +125,15 @@ body {
     height: var(--anchor-button-height);
 }
 
-.svg--logoHeader {}
+.whiteOutline {
+    border: 1px solid var(--text-color);
+}
+
+.p--hero {
+    font-size: 1.25rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
 
 .ul--leftNav,
 .ul--rightNav {
@@ -107,4 +146,8 @@ body {
 
 .ul--rightNav {
     gap: 2rem;
+}
+
+.section--productDesc {
+    color: var(--primary-dark-blue);
 }
