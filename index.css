@@ -25,7 +25,7 @@
     --anchor-button-height: 3rem;
     --anchor-button-width: 8.5625rem;
 
-    --page-padding-left: 10.25rem;
+    --page-padding-left: 11.5vw;
     --page-padding-right: var(--page-padding-left);
 
     --main-font: 'Overpass', sans-serif;
@@ -38,6 +38,7 @@
     --h1-font-size: 1.75rem;
 
     --footer-height: 22.4375rem;
+    --img-width: auto;
 }
 
 
@@ -92,7 +93,10 @@ body {
 .heading--intro {
     display: flex;
     gap: 4rem;
-    padding: 3.55rem 10.25rem 8rem;
+    padding-left: var(--page-padding-left);
+    padding-top: 3.5rem;
+    padding-bottom: 8rem;
+    padding-right: var(--page-padding-right);
     align-items: center;
 }
 
@@ -132,6 +136,10 @@ body {
     display: flex;
     flex: 1;
     justify-content: space-between;
+}
+
+.block--sectionProductDescLeft {
+    max-width: 35vw;
 }
 
 
@@ -200,12 +208,12 @@ body {
 
 .img--productDesc {
     position: absolute;
-    right: -17rem;
+    right: clamp(-280px, -19vw, -400px);
     top: 4.5rem;
 }
 
 .article {
-    width: var(--article-width);
+    max-width: var(--article-width);
 }
 
 .h1--infrastructure {
@@ -248,6 +256,8 @@ body {
 }
 
 .block--sectionWrapper {
+    display: flex;
+    border-radius: 0 6.25rem;
     height: 100%;
     width: 100%;
     background-image: url("./images/bg-pattern-circles.svg");
@@ -259,11 +269,11 @@ body {
 .img--infrastructure {
     position: absolute;
     top: -4.5rem;
-    left: 7.75rem;
+    left: calc(var(--page-padding-left) - 3vw);
 }
 
 .article--infrastructure {
-    margin-left: 46rem;
+    margin-left: auto;
     padding-top: 7.5rem;
 }
 
@@ -278,17 +288,18 @@ body {
 .section--technicalCont {
     display: flex;
     position: relative;
+    justify-content: space-around;
     height: 63rem;
 }
 
 .img--technicalCont {
     position: absolute;
-    top: 6rem;
+    /* height: 55vw; */
+    top: 7rem;
     left: -17.5rem;
 }
 
 .block--rightTechnicalCont {
-    margin-left: 45.75rem;
     padding-top: 18rem;
 }
 
@@ -308,7 +319,7 @@ body {
     padding-top: 4.5rem;
     padding-left: var(--page-padding-left);
     display: flex;
-    gap: 12rem;
+    gap: 13.5vw;
 }
 
 .h1--footer {
@@ -320,4 +331,119 @@ body {
     font-size: .9375rem;
     font-family: 'Ubuntu', sans-serif;
     padding: 0rem 0rem 1rem 0rem;
+}
+
+.block--infrastructureWrapper {
+
+    margin-right: 57vw;
+}
+
+.block--imgWrapper {
+    margin-right: clamp(550px, 50vw, 800px);
+    ;
+}
+
+@media (max-width:1200px) {
+    :root {
+        --page-padding-left: 4vw;
+    }
+
+    .block--sectionProductDescLeft {
+        max-width: 38vw;
+    }
+
+    .img--infrastructure {
+        left: calc(var(--page-padding-left) - 5vw);
+    }
+
+    .block--infrastructureWrapper {
+        margin-right: 525px
+    }
+}
+
+@media (max-width:1100px) {
+    .img--productDesc {
+        height: 790px;
+    }
+
+    .block--sectionProductDescLeft {
+        max-width: 45vw;
+    }
+
+
+    .block--rightTechnicalCont {
+        padding-top: 14rem;
+    }
+}
+
+@media (max-width:1035px) {
+    :root {
+        --h1-infrastructure-font-size: 2.25rem;
+    }
+
+    .article--infrastructure {
+        padding-top: 6.5rem;
+    }
+
+    .img--productDesc {
+        height: 700px;
+        top: 9rem;
+    }
+}
+
+@media (max-width:985px) {
+    .h1--infrastructure {
+        margin-bottom: 1rem;
+    }
+
+    .block--rightTechnicalCont {
+        padding-top: 10rem;
+    }
+
+    .img--technicalCont {
+        height: 700px;
+    }
+}
+
+@media (max-width:880px) {
+    .article--infrastructure {
+        padding-top: 4rem;
+    }
+
+    .img--infrastructure {
+        height: 500px;
+        top: -2rem;
+    }
+
+    .block--infrastructureWrapper {
+        margin-right: 450px;
+    }
+
+    .block--imgWrapper {
+        margin-right: 425px;
+    }
+
+    .section--productDesc {
+        padding-top: 4rem;
+    }
+
+    .heading--intro {
+        gap: 2rem;
+    }
+
+    .ul--rightNav {
+        gap: 1rem;
+    }
+
+    .block--sectionProductDescLeft {
+        max-width: 40vw;
+    }
+
+    .h1--hero {
+        font-size: 3rem;
+    }
+
+    .img--technicalCont {
+        height: 600px;
+    }
 }
