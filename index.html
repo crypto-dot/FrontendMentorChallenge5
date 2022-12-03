@@ -27,51 +27,61 @@
                     </svg>
                     <nav class="nav">
                         <ul class="ul ul--leftNav">
-                            <li aria-expanded="false" id="productMenuTitle" tabindex="1"
-                                class="li li--leftNav li--productMenu li--hasMenu"><a class="a a--ul--leftNav" href="">
+                            <li aria-expanded="false" tabindex="1" id="productMenuTitle"
+                                class="li li--leftNav li--productMenu li--hasMenu"><a tabindex="-1"
+                                    class="a a--ul--leftNav" href="">
                                     Product</a><svg class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg" width="10"
                                     height="7">
                                     <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
                                 </svg></li>
                             <li class="li li--leftNav li--hidden--main">
                                 <ul id="productMenu" class="ul--hidden">
-                                    <li tabindex="2" class="li--hidden"><a class="a a--hidden" href="">Overview</a></li>
-                                    <li tabindex="3" class="li--hidden"><a class="a a--hidden" href="">Pricing</a></li>
-                                    <li tabindex="4" class="li--hidden"><a class="a a--hidden" href="">Marketplace</a>
+                                    <li tabindex="2" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Overview</a></li>
+                                    <li tabindex="3" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Pricing</a></li>
+                                    <li tabindex="4" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Marketplace</a>
                                     </li>
-                                    <li tabindex="5" class="li--hidden"><a class="a a--hidden" href="">Features</a>
+                                    <li tabindex="5" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Features</a>
                                     </li>
                                     <li tabindex="6" id="last--li--hidden" class="li--hidden"><a class="a a--hidden"
-                                            href="">Integration</a>
+                                            tabindex="-1" href="">Integration</a>
                                     </li>
                                 </ul>
                             </li>
                             <li aria-expanded="false" id="companyMenu" tabindex="7"
-                                class="li li--leftNav li--companyMenu li--hasMenu"><a class="a a--ul--leftNav"
-                                    href="">Company</a> <svg class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
-                                    width="10" height="7">
+                                class="li li--leftNav li--companyMenu li--hasMenu"><a tabindex="-1"
+                                    class="a a--ul--leftNav" href="">Company</a> <svg class="svg svg--arrow"
+                                    xmlns="http://www.w3.org/2000/svg" width="10" height="7">
                                     <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
                                 </svg></li>
                             <li aria-expanded="false" class="li li--leftNav li--hidden--main ">
                                 <ul class="ul--hidden">
-                                    <li tabindex="8" class="li--hidden"><a class="a a--hidden" href="">About</a></li>
-                                    <li tabindex="9" class="li--hidden"><a class="a a--hidden" href="">Team</a></li>
-                                    <li tabindex="10" class="li--hidden"><a class="a a--hidden" href="">Blog</a></li>
+                                    <li tabindex="8" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">About</a></li>
+                                    <li tabindex="9" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Team</a></li>
+                                    <li tabindex="10" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Blog</a></li>
                                     <li tabindex="11" id="last--li--hidden" class="li--hidden"><a class="a a--hidden"
-                                            href="">Careers</a>
+                                            tabindex="-1" href="">Careers</a>
                                     </li>
                                 </ul>
                             </li>
                             <li aria-expanded="false" id="connectMenu" tabindex="12"
-                                class="li li--leftNav li--hasMenu li--connectMenu"><a class="a a--ul--leftNav"
-                                    href="">Connect</a> <svg class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
-                                    width="10" height="7">
+                                class="li li--leftNav li--hasMenu li--connectMenu"><a tabindex="-1"
+                                    class="a a--ul--leftNav" href="">Connect</a> <svg class="svg svg--arrow"
+                                    xmlns="http://www.w3.org/2000/svg" width="10" height="7">
                                     <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
                                 </svg></li>
                             <li class="li li--leftNav li--hidden--main">
                                 <ul class="ul--hidden">
-                                    <li tabindex="13" class="li--hidden"><a class="a a--hidden" href="">Contact</a></li>
-                                    <li tabindex="14" class="li--hidden"><a class="a a--hidden" href="">Newsletter</a>
+                                    <li tabindex="13" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Contact</a></li>
+                                    <li tabindex="14" class="li--hidden"><a tabindex="-1" class="a a--hidden"
+                                            href="">Newsletter</a>
                                     </li>
                                     <li tabindex="15" id="last--li--hidden" class="li--hidden"><a class="a a--hidden"
                                             href="">Linkedin</a>
@@ -80,8 +90,10 @@
                             </li>
                         </ul>
                         <ul aria-expanded="false" class="ul ul--rightNav">
-                            <li class="li li--rightNav"><a class="a a--rightNav" href="">Login</a></li>
-                            <li class="li li--rightNav"><a class="a a--rightNav whiteFilled" href="">Sign
+                            <li tabindex="16" class="li li--rightNav"><a tabindex="-1" class="a a--rightNav"
+                                    href="">Login</a></li>
+                            <li tabindex="17" class="li li--rightNav"><a tabindex="-1" class="a a--rightNav whiteFilled"
+                                    href="">Sign
                                     Up</a></li>
                         </ul>
                     </nav>
@@ -90,8 +102,8 @@
                     <h1 class="h1 h1--hero">A modern publishing platform</h1>
                     <p class="p p--hero">Grow your audience and build your online brand</p>
                     <div class="block block--hero">
-                        <a tabindex="0" class="a a--hero whiteFilled">Start for Free</a>
-                        <a tabindex="0" class="a a--hero whiteOutline">Learn More</a>
+                        <a tabindex="18" class="a a--hero whiteFilled">Start for Free</a>
+                        <a tabindex="19" class="a a--hero whiteOutline">Learn More</a>
                     </div>
                 </section>
             </div>
@@ -189,11 +201,16 @@
                     <h1 class="h1 h1--footer">Product</h1>
                 </heading>
                 <ul class="ul ul--footer">
-                    <li class="li li--footer"><a class="a a--footer" href="">Overview</a></li>
-                    <li class="li li--footer"><a class="a a--footer" href="">Pricing</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Marketplace</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Features</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Integration</a></li>
+                    <li tabindex="20" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">Overview</a>
+                    </li>
+                    <li tabindex="21" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">Pricing</a>
+                    </li>
+                    <li tabindex="22" class=" li li--footer"><a tabindex="-1" class="a a--footer"
+                            href="">Marketplace</a></li>
+                    <li tabindex="23" class=" li li--footer"><a tabindex="-1" class="a a--footer" href="">Features</a>
+                    </li>
+                    <li tabindex="24" class=" li li--footer"><a tabindex="-1" class="a a--footer"
+                            href="">Integration</a></li>
                 </ul>
             </section>
             <section class="section section--footer">
@@ -201,10 +218,11 @@
                     <h1 class="h1 h1--footer">Company</h1>
                 </heading>
                 <ul class="ul ul--footer">
-                    <li class="li li--footer"><a class="a a--footer" href="">About</a></li>
-                    <li class="li li--footer"><a class="a a--footer" href="">Team</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Blog</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Careers</a></li>
+                    <li tabindex="25" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">About</a></li>
+                    <li tabindex="26" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">Team</a></li>
+                    <li tabindex="27" class=" li li--footer"><a tabindex="-1" class="a a--footer" href="">Blog</a></li>
+                    <li tabindex="28" class=" li li--footer"><a tabindex="-1" class="a a--footer" href="">Careers</a>
+                    </li>
                 </ul>
             </section>
             <section class="section section--footer">
@@ -212,9 +230,12 @@
                     <h1 class="h1 h1--footer">Connect</h1>
                 </heading>
                 <ul class="ul ul--footer">
-                    <li class="li li--footer"><a class="a a--footer" href="">Contact</a></li>
-                    <li class="li li--footer"><a class="a a--footer" href="">Newsletter</a></li>
-                    <li class=" li li--footer"><a class="a a--footer" href="">Linkedin</a></li>
+                    <li tabindex="29" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">Contact</a>
+                    </li>
+                    <li tabindex="30" class="li li--footer"><a tabindex="-1" class="a a--footer" href="">Newsletter</a>
+                    </li>
+                    <li tabindex="31" class=" li li--footer"><a tabindex="-1" class="a a--footer" href="">Linkedin</a>
+                    </li>
                 </ul>
             </section>
 
