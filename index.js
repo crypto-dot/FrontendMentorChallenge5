@@ -31,15 +31,19 @@
 
 function bindEvents(element, hiddenMenu = null) {
     // For keyboard users we only want them to tab through the menu without closing the menu everytime they focus off (except for the last element)
-    if (element.hasAttribute("class", "li--hidden")) {
+    if (element.getAttribute("class") === "li--hidden") {
         element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu));
         element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu));
         if (element.hasAttribute("id", "last--li--hidden")) {
             element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu));
         }
+        console.log(element);
         return;
     }
-    element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu));
+    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu));
+    console.log('s')
+    element.addEventListener("mouseleave",
+        closeMenu.bind(this, element, hiddenMenu));
 }
 function openMenu(menu, hiddenMenu = null) {
     if (menu.hasAttribute("aria-expanded")) {
@@ -56,7 +60,7 @@ function closeMenu(menu, hiddenMenu = null) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "false");
     }
-    debugger;
+    console.log('a')
     if (!hiddenMenu) {
         menu.style.clipPath = "circle(0% at 5% 5%)";
     }
