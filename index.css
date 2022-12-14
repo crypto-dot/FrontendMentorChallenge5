@@ -623,9 +623,40 @@ body {
 
     .ul--leftNav,
     .ul--rightNav {
+        z-index: 99;
+        left: 4vw;
+        width: 20rem;
         background-color: var(--text-color);
-        right: 0;
         position: absolute;
+    }
+
+    .li--hidden--main:nth-child(4),
+    .li--hidden--main:nth-child(6) {
+        left: 0rem;
+    }
+
+    .ul--leftNav>.li,
+    .ul--rightNav>.li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .svg--arrow>path {
+        stroke: var(--button-sign-up-hover);
+    }
+
+    .ul--rightNav>.li {
+        margin-right: 0.925rem;
+    }
+
+    .ul--rightNav>.li:last-child>.a--rightNav {
+        color: var(--text-color);
+        background-image: var(--background-intro-color);
+    }
+
+    .ul--leftNav {
+        padding: 2rem;
     }
 
     .a--ul--leftNav,
@@ -634,6 +665,6 @@ body {
     }
 
     .ul--rightNav {
-        top: 9rem;
+        top: 11rem;
     }
 }
