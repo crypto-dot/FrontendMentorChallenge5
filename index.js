@@ -1,70 +1,83 @@
 
 (function attachEventListenersProductMenu() {
-    let menus = document.getElementsByClassName("li--hasMenu");
+    let menus = document.getElementsByClassName("a--ul--leftNav");
     let hiddenMenus = document.getElementsByClassName("ul--hidden");
     let liHiddens = document.getElementsByClassName("li--hidden");
+    let arrows = document.getElementsByClassName("svg--arrow");
     let hiddenMenuIndex = 0;
-    let numberOfBulletsInFirstMenu = 5;
-    let numberOfBulletsInSecondMenu = 4;
-    let numberOfBulletsInThirdMenu = 3;
+    const NUM_OF_BULLETS_FIRST_MENU = 5;
+    const NUM_OF_BULLETS_SECOND_MENU = 4;
+    const NUM_OF_BULLETS_THIRD_MENU = 3;
+
     Array.from(menus).forEach(menu => {
-        bindEvents(menu, hiddenMenus[hiddenMenuIndex]);
+        bindEvents(menu, hiddenMenus[hiddenMenuIndex], arrows[hiddenMenuIndex]);
         hiddenMenuIndex++;
     });
 
-    Array.from(hiddenMenus).forEach(hiddenMenu => bindEvents(hiddenMenu));
+    // reset index
+    hiddenMenuIndex = 0;
+    Array.from(hiddenMenus).forEach(hiddenMenu => {
+        bindEvents(hiddenMenu, null, arrows[hiddenMenuIndex]);
+        hiddenMenuIndex++;
+    });
 
     hiddenMenuIndex = 0;
     Array.from(liHiddens).forEach(liHidden => {
-        //Determine which menu the li is in to determine the menu to keep open
-        if (hiddenMenuIndex < numberOfBulletsInFirstMenu) {
-            bindEvents(liHidden, hiddenMenus[0]);
-        } else if (hiddenMenuIndex < numberOfBulletsInFirstMenu + numberOfBulletsInSecondMenu) {
-            bindEvents(liHidden, hiddenMenus[1]);
-        } else if (hiddenMenuIndex < numberOfBulletsInThirdMenu + numberOfBulletsInFirstMenu + numberOfBulletsInSecondMenu) {
-            bindEvents(liHidden, hiddenMenus[2]);
+        // Determine which menu the li is in to determine the menu to keep open
+        if (hiddenMenuIndex < NUM_OF_BULLETS_FIRST_MENU) {
+            bindEvents(liHidden, hiddenMenus[0], arrows[0]);
+        } else if (hiddenMenuIndex < NUM_OF_BULLETS_FIRST_MENU + NUM_OF_BULLETS_SECOND_MENU) {
+            bindEvents(liHidden, hiddenMenus[1], arrows[1]);
+        } else if (hiddenMenuIndex < NUM_OF_BULLETS_THIRD_MENU + NUM_OF_BULLETS_FIRST_MENU + NUM_OF_BULLETS_SECOND_MENU) {
+            bindEvents(liHidden, hiddenMenus[2], arrows[2]);
         }
         hiddenMenuIndex++;
     });
 
 })();
 
-function bindEvents(element, hiddenMenu = null) {
+function bindEvents(element, hiddenMenu = null, arrow) {
     // For keyboard users we only want them to tab through the menu without closing the menu everytime they focus off (except for the last element)
     if (element.getAttribute("class") === "li--hidden") {
-        element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu));
-        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu));
+        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow));
         if (element.hasAttribute("id", "last--li--hidden")) {
-            element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu));
+            element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow));
         }
-        console.log(element);
         return;
     }
-    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu));
-    console.log('s')
-    element.addEventListener("mouseleave",
-        closeMenu.bind(this, element, hiddenMenu));
+
+    element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow));
+    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow));
+    element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow));
 }
-function openMenu(menu, hiddenMenu = null) {
+function openMenu(menu, hiddenMenu = null, arrow) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "true");
     }
+    arrow.style.rotate = "180deg";
+    // Here we have to account for the fact that the first parameter can possibly be a hidden menu
     if (!hiddenMenu) {
+        // Menus overlap we need to account for this
+        menu.style.zIndex = "1";
         menu.style.clipPath = "circle(100%)";
     }
     if (hiddenMenu) {
+        hiddenMenu.style.zIndex = "1";
         hiddenMenu.style.clipPath = "circle(100%)";
     }
 }
-function closeMenu(menu, hiddenMenu = null) {
+function closeMenu(menu, hiddenMenu = null, arrow) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "false");
     }
-    console.log('a')
+    arrow.style.rotate = "0deg";
+    // Here we have to account for the fact that the first parameter can possibly be a hidden menu
     if (!hiddenMenu) {
+        menu.style.zIndex = "0";
         menu.style.clipPath = "circle(0% at 5% 5%)";
     }
     if (hiddenMenu) {
+        hiddenMenu.style.zIndex = "0";
         hiddenMenu.style.clipPath = "circle(0% at 5% 5%)";
     }
 }
