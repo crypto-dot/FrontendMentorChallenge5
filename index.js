@@ -62,6 +62,7 @@ function openMenu(menu, hiddenMenu = null, arrow) {
         menu.style.clipPath = "circle(100%)";
     }
     if (hiddenMenu) {
+        // Menus overlap we need to account for this
         hiddenMenu.style.zIndex = "1";
         hiddenMenu.style.clipPath = "circle(100%)";
     }
@@ -73,10 +74,12 @@ function closeMenu(menu, hiddenMenu = null, arrow) {
     arrow.style.rotate = "0deg";
     // Here we have to account for the fact that the first parameter can possibly be a hidden menu
     if (!hiddenMenu) {
+        // Undo the z-index so other menus are not be affected
         menu.style.zIndex = "0";
         menu.style.clipPath = "circle(0% at 5% 5%)";
     }
     if (hiddenMenu) {
+        // Undo the z-index so other menus are not be affected
         hiddenMenu.style.zIndex = "0";
         hiddenMenu.style.clipPath = "circle(0% at 5% 5%)";
     }

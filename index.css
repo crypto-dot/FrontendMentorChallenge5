@@ -11,6 +11,8 @@
     --background-red-gradient: hsl(13, 100%, 72%);
     --background-light-red-gradient: hsl(353, 100%, 62%);
 
+    --button-sign-up-hover: hsl(355, 100%, 74%);
+
     --background-intro-color: linear-gradient(135deg, #FF8F71 0%, #FF3E55 100%);
 
     --background-body-blue: hsl(237, 17%, 21%);
@@ -236,7 +238,17 @@ body {
     margin-left: .3rem;
 }
 
+.button--mobileNav {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
 .nav {
+    position: relative;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -252,6 +264,12 @@ body {
     color: var(--primary-red);
 }
 
+.a.whiteFilled:hover,
+.a.whiteFilled:focus {
+    background-color: var(--button-sign-up-hover);
+    color: var(--text-color);
+}
+
 .whiteFilled,
 .whiteOutline {
     opacity: 100%;
@@ -261,10 +279,17 @@ body {
     border-radius: 2rem;
     width: var(--anchor-button-width);
     height: var(--anchor-button-height);
+    transition: all .5s ease;
 }
 
 .whiteOutline {
     border: 1px solid var(--text-color);
+}
+
+.whiteOutline:hover,
+.whiteOutline:focus {
+    color: var(--button-sign-up-hover);
+    background-color: var(--text-color);
 }
 
 .p {
@@ -395,7 +420,6 @@ body {
 
 .img--technicalCont {
     position: absolute;
-    /* height: 55vw; */
     top: 7rem;
     left: -17.5rem;
 }
@@ -546,5 +570,70 @@ body {
 
     .img--technicalCont {
         height: 600px;
+    }
+}
+
+@media (max-width: 775px) {
+    .h1--productDesc {
+        text-align: start;
+        margin-bottom: 3rem;
+    }
+
+    .header--productDesc {
+        padding-right: 0rem;
+        width: 100vw;
+    }
+
+    .article--infrastructure {
+        padding-top: 3rem;
+    }
+
+    .img--productDesc {
+        height: 650px;
+        top: 9rem;
+    }
+
+    .block--infrastructureWrapper {
+        margin-right: 410px;
+    }
+
+    .img--infrastructure {
+        height: 450px;
+        top: .5rem;
+    }
+}
+
+@media (max-width: 725px) {
+    .heading--intro {
+        position: relative;
+    }
+
+
+    .button--mobileNav {
+        height: 1.2rem;
+        width: 2rem;
+        display: block;
+    }
+
+    .nav,
+    .ul--leftNav,
+    .ul--rightNav {
+        flex-direction: column;
+    }
+
+    .ul--leftNav,
+    .ul--rightNav {
+        background-color: var(--text-color);
+        right: 0;
+        position: absolute;
+    }
+
+    .a--ul--leftNav,
+    .a--rightNav {
+        color: var(--primary-dark-blue);
+    }
+
+    .ul--rightNav {
+        top: 9rem;
     }
 }
