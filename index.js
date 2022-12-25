@@ -1,5 +1,5 @@
 
-(function attachEventListenersProductMenu() {
+(function attachEventListenersMenu() {
     let menus = document.getElementsByClassName("a--ul--leftNav");
     let hiddenMenus = document.getElementsByClassName("ul--hidden");
     let liHiddens = document.getElementsByClassName("li--hidden");
@@ -49,6 +49,11 @@ function bindEvents(element, hiddenMenu = null, arrow) {
     element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow));
     element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow));
     element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow));
+
+    // click events for mobile devices
+
+    element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow));
+
 }
 function openMenu(menu, hiddenMenu = null, arrow) {
     if (menu.hasAttribute("aria-expanded")) {
@@ -63,6 +68,8 @@ function openMenu(menu, hiddenMenu = null, arrow) {
     }
     if (hiddenMenu) {
         // Menus overlap we need to account for this
+        hiddenMenu.closest(".li--hidden--main").style.height = "auto";
+        hiddenMenu.closest(".li--hidden--main").style.opacity = "1";
         hiddenMenu.style.zIndex = "1";
         hiddenMenu.style.clipPath = "circle(100%)";
     }
@@ -80,8 +87,17 @@ function closeMenu(menu, hiddenMenu = null, arrow) {
     }
     if (hiddenMenu) {
         // Undo the z-index so other menus are not be affected
+        hiddenMenu.closest(".li--hidden--main").style.height = "0";
+        hiddenMenu.closest(".li--hidden--main").style.opacity = "0";
         hiddenMenu.style.zIndex = "0";
         hiddenMenu.style.clipPath = "circle(0% at 5% 5%)";
     }
 }
 
+function toggleMenu(menu, hiddenMenu = null, arrow) {
+    if (menu.getAttribute("aria-expanded") === "true") {
+        closeMenu(menu, hiddenMenu, arrow);
+    } else {
+        openMenu(menu, hiddenMenu, arrow);
+    }
+}
