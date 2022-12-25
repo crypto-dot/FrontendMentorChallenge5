@@ -39,23 +39,23 @@
 function bindEvents(element, hiddenMenu = null, arrow) {
     // For keyboard users we only want them to tab through the menu without closing the menu everytime they focus off (except for the last element)
     if (element.getAttribute("class") === "li--hidden") {
-        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow));
+        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
         if (element.hasAttribute("id", "last--li--hidden")) {
-            element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow));
+            element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow, false));
         }
         return;
     }
 
-    element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow));
-    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow));
-    element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow));
+    element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow, false));
+    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
+    element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow, false));
 
     // click events for mobile devices
 
-    element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow));
+    element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow, true));
 
 }
-function openMenu(menu, hiddenMenu = null, arrow) {
+function openMenu(menu, hiddenMenu = null, arrow, clickedEvent = false) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "true");
     }
@@ -68,13 +68,15 @@ function openMenu(menu, hiddenMenu = null, arrow) {
     }
     if (hiddenMenu) {
         // Menus overlap we need to account for this
-        hiddenMenu.closest(".li--hidden--main").style.height = "auto";
-        hiddenMenu.closest(".li--hidden--main").style.opacity = "1";
+        if (clickedEvent) {
+            hiddenMenu.closest(".li--hidden--main").style.height = "auto";
+            hiddenMenu.closest(".li--hidden--main").style.opacity = "1";
+        }
         hiddenMenu.style.zIndex = "1";
         hiddenMenu.style.clipPath = "circle(100%)";
     }
 }
-function closeMenu(menu, hiddenMenu = null, arrow) {
+function closeMenu(menu, hiddenMenu = null, arrow, clickedEvent) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "false");
     }
@@ -87,17 +89,19 @@ function closeMenu(menu, hiddenMenu = null, arrow) {
     }
     if (hiddenMenu) {
         // Undo the z-index so other menus are not be affected
-        hiddenMenu.closest(".li--hidden--main").style.height = "0";
-        hiddenMenu.closest(".li--hidden--main").style.opacity = "0";
+        if (clickedEvent) {
+            hiddenMenu.closest(".li--hidden--main").style.height = "0";
+            hiddenMenu.closest(".li--hidden--main").style.opacity = "0";
+        }
         hiddenMenu.style.zIndex = "0";
         hiddenMenu.style.clipPath = "circle(0% at 5% 5%)";
     }
 }
 
-function toggleMenu(menu, hiddenMenu = null, arrow) {
+function toggleMenu(menu, hiddenMenu = null, arrow, clickedEvent) {
     if (menu.getAttribute("aria-expanded") === "true") {
-        closeMenu(menu, hiddenMenu, arrow);
+        closeMenu(menu, hiddenMenu, arrow, clickedEvent);
     } else {
-        openMenu(menu, hiddenMenu, arrow);
+        openMenu(menu, hiddenMenu, arrow, clickedEvent);
     }
 }
