@@ -1,4 +1,3 @@
-
 (function attachEventListenersMenu() {
     let menus = document.getElementsByClassName("a--ul--leftNav");
     let hiddenMenus = document.getElementsByClassName("ul--hidden");
@@ -38,24 +37,30 @@
 
 function bindEvents(element, hiddenMenu = null, arrow) {
     // For keyboard users we only want them to tab through the menu without closing the menu everytime they focus off (except for the last element)
-    if (element.getAttribute("class") === "li--hidden") {
-        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
-        if (element.hasAttribute("id", "last--li--hidden")) {
-            element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow, false));
+    console.log(screen.width)
+    if (screen.availWidth >= 725) {
+
+        if (element.getAttribute("class") === "li--hidden") {
+            element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
+            if (element.hasAttribute("id", "last--li--hidden")) {
+                element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow, false));
+            }
+            return;
         }
-        return;
+
+        element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow, false));
+        element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
+        element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow, false));
+
+    } else {
+
+        // click events for mobile devices
+
+        element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow, true));
+
     }
-
-    element.addEventListener("focus", openMenu.bind(this, element, hiddenMenu, arrow, false));
-    element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
-    element.addEventListener("mouseleave", closeMenu.bind(this, element, hiddenMenu, arrow, false));
-
-    // click events for mobile devices
-
-    element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow, true));
-
 }
-function openMenu(menu, hiddenMenu = null, arrow, clickedEvent = false) {
+function openMenu(menu, hiddenMenu = null, arrow, clickedEvent) {
     if (menu.hasAttribute("aria-expanded")) {
         menu.setAttribute("aria-expanded", "true");
     }

@@ -11,7 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <script defer src="./index.js"></script>
+    <script defer src="./menuEvents.js"></script>
+    <script defer src="./mobileButtonEvents.js"></script>
     <title>Blogr</title>
 </head>
 
@@ -26,20 +27,23 @@
                             fill="#FFF" fill-rule="nonzero" />
                     </svg>
                     <nav class="nav">
-                        <button aria-expanded="false" aria-label="mobile nav" class="button button--mobileNav"><svg
-                                width="32" height="18" xmlns="http://www.w3.org/2000/svg">
-                                <g fill="#FFF" fill-rule="evenodd">
-                                    <path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z" />
-                                </g>
+                        <button aria-expanded="false" aria-controls="main navigation" class="button button--mobileNav">
+                            <svg stroke="white" class="hamburger" width="48" height="45" viewbox="0 0 100 100">
+                                <path class="path" fill="none" stroke-width="10" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+
+                                </path>
                             </svg></button>
                         <ul class="ul ul--leftNav">
                             <li id="productMenuTitle" class="li li--leftNav li--productMenu li--hasMenu">
-                                <span aria-expanded="false" tabindex="1" class="a a--ul--leftNav" href="">
-                                    Product</span>
-                                <svg id="first--arrow" class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
-                                    width="10" height="7">
-                                    <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
-                                </svg>
+                                <span tabindex="1" class="a a--ul--leftNav" href="">
+                                    Product <svg id="first--arrow" class="svg svg--arrow"
+                                        xmlns="http://www.w3.org/2000/svg" width="10" height="7">
+                                        <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75"
+                                            d="M1 1l4 4 4-4" />
+                                    </svg></span>
+
                             </li>
                             <li class="li li--leftNav li--hidden--main">
                                 <ul id="productMenu" class="ul--hidden">
@@ -57,11 +61,12 @@
                                 </ul>
                             </li>
                             <li id="companyMenu" class="li li--leftNav li--companyMenu li--hasMenu">
-                                <span aria-expanded="false" tabindex="7" class="a a--ul--leftNav" href="">Company</span>
-                                <svg id="second--arrow" class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
-                                    width="10" height="7">
-                                    <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
-                                </svg>
+                                <span aria-expanded="false" tabindex="7" class="a a--ul--leftNav" href="">Company <svg
+                                        id="second--arrow" class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
+                                        width="10" height="7">
+                                        <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75"
+                                            d="M1 1l4 4 4-4" />
+                                    </svg></span>
                             </li>
                             <li class="li li--leftNav li--hidden--main ">
                                 <ul class="ul--hidden">
@@ -76,12 +81,12 @@
                                 </ul>
                             </li>
                             <li id="connectMenu" class="li li--leftNav li--hasMenu li--connectMenu">
-                                <span aria-expanded="false" tabindex="12" class="a a--ul--leftNav"
-                                    href="">Connect</span>
-                                <svg id="third--arrow" class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
-                                    width="10" height="7">
-                                    <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75" d="M1 1l4 4 4-4" />
-                                </svg>
+                                <span aria-expanded="false" tabindex="12" class="a a--ul--leftNav" href="">Connect <svg
+                                        id="third--arrow" class="svg svg--arrow" xmlns="http://www.w3.org/2000/svg"
+                                        width="10" height="7">
+                                        <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75"
+                                            d="M1 1l4 4 4-4" />
+                                    </svg></span>
                             </li>
                             <li class="li li--leftNav li--hidden--main">
                                 <ul class="ul--hidden">
@@ -148,7 +153,9 @@
                         </p>
                     </article>
             </div>
-            <img class="img img--productDesc" src="./images/illustration-editor-desktop.svg">
+            <img class="img img--productDesc"
+                srcset="./images/illustration-editor-desktop.svg  882w, ./images/illustration-editor-mobile.svg 400w"
+                sizes="(min-width: 725px): 800px, 300px">
         </section>
         <section class="section section--infrastructure">
             <div class="block block--sectionWrapper">

@@ -244,7 +244,7 @@ body {
     border: none;
     background-color: transparent;
     position: absolute;
-    top: 1rem;
+    top: 4rem;
     right: 2rem;
     display: none;
 }
@@ -470,6 +470,30 @@ body {
     ;
 }
 
+.button--mobileNav .hamburger {
+    transition: 1s;
+}
+
+.path {
+    transition: 1s;
+}
+
+.button--mobileNav[aria-expanded="true"] .hamburger {
+    translate: 10px -10px;
+    rotate: 45deg;
+}
+
+.button--mobileNav .path {
+    stroke-dasharray: 60 31.141 60 300;
+}
+
+.button--mobileNav[aria-expanded="true"] .path {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+}
+
+
+
 @media (max-width:1200px) {
     :root {
         --page-padding-left: 4vw;
@@ -610,10 +634,18 @@ body {
         position: relative;
     }
 
+    .h1--hero {
+        font-size: 2.5rem;
+    }
+
+    .p--hero {
+        font-size: 1rem;
+    }
+
 
     .button--mobileNav {
-        height: 1.2rem;
-        width: 2rem;
+        cursor: pointer;
+        overflow: hidden;
         display: block;
     }
 
@@ -633,10 +665,15 @@ body {
 
     .ul--leftNav,
     .ul--rightNav {
+        overflow: hidden;
+        transition: all .5s;
         z-index: 99;
         width: 15rem;
         background-color: var(--text-color);
         border-radius: .5em;
+        left: calc(50vw - 7.5rem);
+        height: 0;
+        padding: 0;
     }
 
     .li--hidden--main:nth-child(4),
@@ -667,7 +704,7 @@ body {
         height: 0;
         opacity: 0;
         margin-top: -2rem;
-        transition: all .5s ease;
+        transition: all 1s ease;
     }
 
     .ul--hidden {
@@ -682,6 +719,10 @@ body {
         stroke: var(--button-sign-up-hover);
     }
 
+    .ul--leftNav {
+        top: 2rem;
+    }
+
     .ul--rightNav>.li {
         margin-right: 0.925rem;
     }
@@ -691,9 +732,6 @@ body {
         background-image: var(--background-intro-color);
     }
 
-    .ul--leftNav {
-        padding: 2rem;
-    }
 
     .a--ul--leftNav,
     .a--rightNav {
@@ -702,8 +740,7 @@ body {
 
     .ul--rightNav {
         position: relative;
-        top: -0.75rem;
-        padding: 1rem 0rem 2rem 0rem;
+        top: 1.25rem;
     }
 
     .ul--rightNav::before {
