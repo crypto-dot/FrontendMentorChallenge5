@@ -37,7 +37,7 @@
                             </svg></button>
                         <ul class="ul ul--leftNav">
                             <li id="productMenuTitle" class="li li--leftNav li--productMenu li--hasMenu">
-                                <span tabindex="1" class="a a--ul--leftNav" href="">
+                                <span aria-expanded="false" tabindex="1" class="a a--ul--leftNav" href="">
                                     Product <svg id="first--arrow" class="svg svg--arrow"
                                         xmlns="http://www.w3.org/2000/svg" width="10" height="7">
                                         <path fill="none" stroke="#FFF" stroke-width="2" opacity=".75"
@@ -154,8 +154,8 @@
                     </article>
             </div>
             <img class="img img--productDesc"
-                srcset="./images/illustration-editor-desktop.svg  882w, ./images/illustration-editor-mobile.svg 400w"
-                sizes="(min-width: 725px): 800px, 300px">
+                srcset="./images/illustration-editor-mobile.svg 725w, ./images/illustration-editor-desktop.svg 925w"
+                sizes="(max-width:725px) 725px, 925px">
         </section>
         <section class="section section--infrastructure">
             <div class="block block--sectionWrapper">

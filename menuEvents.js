@@ -7,7 +7,6 @@
     const NUM_OF_BULLETS_FIRST_MENU = 5;
     const NUM_OF_BULLETS_SECOND_MENU = 4;
     const NUM_OF_BULLETS_THIRD_MENU = 3;
-
     Array.from(menus).forEach(menu => {
         bindEvents(menu, hiddenMenus[hiddenMenuIndex], arrows[hiddenMenuIndex]);
         hiddenMenuIndex++;
@@ -37,7 +36,6 @@
 
 function bindEvents(element, hiddenMenu = null, arrow) {
     // For keyboard users we only want them to tab through the menu without closing the menu everytime they focus off (except for the last element)
-    console.log(screen.width)
     if (screen.availWidth >= 725) {
 
         if (element.getAttribute("class") === "li--hidden") {
@@ -55,8 +53,10 @@ function bindEvents(element, hiddenMenu = null, arrow) {
     } else {
 
         // click events for mobile devices
+        if (element.className === "a a--ul--leftNav") {
 
-        element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow, true));
+            element.addEventListener("click", toggleMenu.bind(this, element, hiddenMenu, arrow, true));
+        }
 
     }
 }
@@ -92,6 +92,7 @@ function closeMenu(menu, hiddenMenu = null, arrow, clickedEvent) {
         menu.style.zIndex = "0";
         menu.style.clipPath = "circle(0% at 5% 5%)";
     }
+    debugger
     if (hiddenMenu) {
         // Undo the z-index so other menus are not be affected
         if (clickedEvent) {

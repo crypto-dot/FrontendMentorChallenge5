@@ -186,7 +186,6 @@ body {
 .section--intro {
     background-image: var(--background-intro-color);
     border-radius: 0px 0px 0px 6.25rem;
-    overflow: hidden;
 }
 
 .block--wrapperIntro {
@@ -195,6 +194,7 @@ body {
     background-image: url(./images/bg-pattern-intro-desktop.svg);
     background-position: 25% 52%;
     padding-bottom: 9.25rem;
+    border-radius: 0px 0px 0px 6.25rem;
 }
 
 .heading--intro {
@@ -336,8 +336,7 @@ body {
 
 .img--productDesc {
     position: absolute;
-    right: clamp(-280px, -19vw, -400px);
-    top: 4.5rem;
+    right: clamp(-800px, -17.5vw, -250px);
 }
 
 .article {
@@ -538,7 +537,6 @@ body {
 
     .img--productDesc {
         height: 700px;
-        top: 9rem;
     }
 }
 
@@ -587,7 +585,7 @@ body {
     }
 
     .block--sectionProductDescLeft {
-        max-width: 40vw;
+        max-width: 39vw;
     }
 
     .h1--hero {
@@ -616,7 +614,7 @@ body {
 
     .img--productDesc {
         height: 650px;
-        top: 9rem;
+        top: 4.5rem;
     }
 
     .block--infrastructureWrapper {
