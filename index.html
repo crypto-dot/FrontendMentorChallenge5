@@ -154,14 +154,19 @@
                         </p>
                     </article>
             </div>
-            <img class="img img--productDesc"
-                srcset="./images/illustration-editor-mobile.svg 406w, ./images/illustration-editor-desktop.svg 925w"
-                sizes="(max-width:725px) 406px, 925px">
+            <picture>
+                <source media="(max-width: 725px)" srcset="
+                    ./images/illustration-editor-mobile.svg">
+                <img class="img img--productDesc" src="./images/illustration-editor-desktop.svg ">
+            </picture>
         </section>
         <section class="section section--infrastructure">
             <div class="block block--sectionWrapper">
-                <div class="block block--infrastructureWrapper"><img class="img img--infrastructure"
-                        src="./images/illustration-phones.svg"></div>
+                <div class="block block--infrastructureWrapper">
+                    <picture>
+                        <img class="img img--infrastructure" src="./images/illustration-phones.svg">
+                    </picture>
+                </div>
                 <article class="article article--infrastructure">
                     <heading class="heading heading--infrastructure">
                         <h1 class="h1 h1--infrastructure">State of the Art Infrastucture</h1>
@@ -176,8 +181,12 @@
         </section>
         </section>
         <section class="section section--technicalCont">
-            <div class="block block--imgWrapper"><img class="img img--technicalCont"
-                    src="./images/illustration-laptop-desktop.svg"></div>
+            <div class="block block--imgWrapper">
+                <picture>
+                    <source media="(max-width: 725px)" srcset="./images/illustration-laptop-mobile.svg">
+                    <img class="img img--technicalCont" src="./images/illustration-laptop-desktop.svg">
+                </picture>
+            </div>
             <div class="block block--rightTechnicalCont">
                 <article class="article article--technicalCont">
                     <heading class="heading heading--technicalCont">
