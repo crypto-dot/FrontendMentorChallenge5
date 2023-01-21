@@ -40,7 +40,7 @@ function bindEvents(element, hiddenMenu = null, arrow) {
 
         if (element.getAttribute("class") === "li--hidden") {
             element.addEventListener("mouseenter", openMenu.bind(this, element, hiddenMenu, arrow, false));
-            if (element.hasAttribute("id", "last--li--hidden")) {
+            if (element.hasAttribute("data-type", "last--li--hidden")) {
                 element.addEventListener("focusout", closeMenu.bind(this, element, hiddenMenu, arrow, false));
             }
             return;
