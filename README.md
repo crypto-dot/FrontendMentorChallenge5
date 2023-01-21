@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [CLICK ME!](https://your-live-site-url.com)
+- Live Site URL: [CLICK ME!](https://crypto-dot.github.io/FrontendMentorChallenge5/)
 
 ## My process
 For this webpage I worked from top to bottom. Each section I worked from outside to inside. So my workflow was top to bottom then outside to inside. The biggest struggle I had was deciding what to make as a background image and what to make as a regular image. I ultimately decided to make important images as images and non-important images as background images (for accessiblity reasons).

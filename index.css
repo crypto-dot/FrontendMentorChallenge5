@@ -44,7 +44,7 @@
 
     --hidden-menu-width: 10.5rem;
     --hidden-menu-height: 9.1875rem;
-
+    --right-offset: 11.45vw;
     --mobile-grey-menu: hsl(0, 0%, 91%);
 
     --section-product-desc-height: 63rem;
@@ -185,6 +185,8 @@ main {
     display: flex;
     align-items: center;
     opacity: 100%;
+    background-color: transparent;
+    border: none;
 }
 
 .h1 {
@@ -405,7 +407,6 @@ main {
     background-image: url("./images/bg-pattern-circles.svg");
     background-repeat: no-repeat;
     background-position: top 83% left -50%;
-    background-size: cover;
     position: relative;
 }
 
@@ -416,7 +417,8 @@ main {
 }
 
 .article--infrastructure {
-    margin-left: auto;
+    position: absolute;
+    right: var(--right-offset);
     padding-top: 7.5rem;
 }
 
@@ -443,6 +445,8 @@ main {
 
 .block--rightTechnicalCont {
     padding-top: 18rem;
+    position: absolute;
+    right: var(--right-offset);
 }
 
 .h1--technicalCont {
