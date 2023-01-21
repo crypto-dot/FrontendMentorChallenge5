@@ -698,8 +698,7 @@ main {
 
     .img--technicalCont {
         height: initial;
-        position: static;
-        margin-bottom: 2rem;
+        position: revert;
     }
 
     .img--infrastructure {
@@ -713,6 +712,7 @@ main {
     }
 
     .article--infrastructure {
+        position: revert;
         padding: 13.8125rem 1.5rem 6.8125rem;
     }
 
@@ -879,7 +879,11 @@ main {
     }
 
     .block--rightTechnicalCont {
-        padding-bottom: 3rem;
+        position: revert;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
 }
