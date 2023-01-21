@@ -63,6 +63,12 @@
 body {
     font-family: var(--main-font);
     color: var(--text-color);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 main {
@@ -344,7 +350,8 @@ main {
 
 .img--productDesc {
     position: absolute;
-    right: clamp(-800px, -17.5vw, -250px);
+    right: clamp(-800px, -20.5vw, -250px);
+    top: 6rem;
 }
 
 .article {
@@ -392,11 +399,13 @@ main {
 
 .block--sectionWrapper {
     display: flex;
-    height: 100%;
+    border-radius: 0 6.25rem;
+    min-height: var(--section-infrastructure-height);
     width: 100%;
     background-image: url("./images/bg-pattern-circles.svg");
     background-repeat: no-repeat;
     background-position: top 83% left -50%;
+    background-size: cover;
     position: relative;
 }
 
@@ -641,6 +650,11 @@ main {
 
     }
 
+    .img--productDesc {
+        margin-top: 5rem;
+    }
+
+
     .block--wrapperIntro {
         background-image: url(./images/bg-pattern-intro-mobile.svg);
     }
@@ -656,9 +670,8 @@ main {
     }
 
     .block--sectionWrapper {
-        border-radius: 0 6.25rem;
-        background-size: 100%;
-        background-position: bottom center;
+        background-position: top 1050% left 50%;
+        background-size: 31.25rem;
         flex-direction: column;
     }
 
@@ -696,7 +709,7 @@ main {
     }
 
     .article--infrastructure {
-        padding: 12rem 2rem 2rem 2rem;
+        padding: 13.8125rem 1.5rem 6.8125rem;
     }
 
     .block--imgWrapper {
@@ -740,7 +753,9 @@ main {
     }
 
     .h1--hero {
-        font-size: 2.5rem;
+        line-height: 153%;
+        font-size: 2.25rem;
+        text-align: center;
     }
 
     .p--hero {
@@ -820,11 +835,11 @@ main {
     }
 
     .ul--leftNav {
-        top: 2rem;
+        top: 8rem;
     }
 
     .ul--rightNav>.li {
-        margin-right: 0.925rem;
+        margin-right: 0.625rem;
     }
 
     .ul--rightNav>.li:last-child>.a--rightNav {
@@ -840,7 +855,7 @@ main {
 
     .ul--rightNav {
         position: relative;
-        top: 1.25rem;
+        top: 7.25rem;
     }
 
     .ul--rightNav::before {
@@ -849,5 +864,38 @@ main {
         position: relative;
         top: 0;
         border: .5px solid hsl(0, 0%, 59%, 90%);
+    }
+
+    .footer {
+        height: revert;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 4.6875rem;
+        gap: 2.5rem;
+    }
+
+    .block--rightTechnicalCont {
+        padding-bottom: 3rem;
+    }
+
+}
+
+@media (max-width:610px) {
+    .block--sectionWrapper {
+        background-position: top -10000% left 50%;
+    }
+}
+
+@media (max-width:490px) {
+    .block--sectionWrapper {
+        background-size: 30rem;
+        background-position: top -150% left 50%;
+    }
+}
+
+@media (max-width:385px) {
+    .block--sectionWrapper {
+        background-size: 30rem;
+        background-position: top -125% left 50%;
     }
 }

@@ -92,7 +92,6 @@ function closeMenu(menu, hiddenMenu = null, arrow, clickedEvent) {
         menu.style.zIndex = "0";
         menu.style.clipPath = "circle(0% at 5% 5%)";
     }
-    debugger
     if (hiddenMenu) {
         // Undo the z-index so other menus are not be affected
         if (clickedEvent) {
