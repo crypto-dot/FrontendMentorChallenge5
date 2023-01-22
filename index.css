@@ -413,13 +413,14 @@ main {
 .img--infrastructure {
     position: absolute;
     top: -4.5rem;
-    left: calc(var(--page-padding-left) - 3vw);
+    left: calc(var(--page-padding-left) - 3.5vw);
 }
 
 .article--infrastructure {
     position: absolute;
-    right: var(--right-offset);
+    left: clamp(620px, 51vw, 900px);
     padding-top: 7.5rem;
+    padding-right: 2rem;
 }
 
 .p--infrastructure {
@@ -446,7 +447,8 @@ main {
 .block--rightTechnicalCont {
     padding-top: 18rem;
     position: absolute;
-    right: var(--right-offset);
+    left: clamp(620px, 51vw, 900px);
+    padding-right: 2rem;
 }
 
 .h1--technicalCont {
@@ -480,13 +482,11 @@ main {
 }
 
 .block--infrastructureWrapper {
-
     margin-right: 57vw;
 }
 
 .block--imgWrapper {
     margin-right: clamp(550px, 50vw, 800px);
-    ;
 }
 
 .button--mobileNav .hamburger {
@@ -529,6 +529,15 @@ main {
     .block--infrastructureWrapper {
         margin-right: 525px
     }
+
+    .img--technicalCont {
+        height: 700px;
+    }
+
+    .article--infrastructure,
+    .block--rightTechnicalCont {
+        left: clamp(550px, 46vw, 900px);
+    }
 }
 
 @media (max-width:1100px) {
@@ -552,7 +561,7 @@ main {
     }
 
     .article--infrastructure {
-        padding-top: 6.5rem;
+        padding-top: 4.5rem;
     }
 
     .img--productDesc {
@@ -567,10 +576,6 @@ main {
 
     .block--rightTechnicalCont {
         padding-top: 10rem;
-    }
-
-    .img--technicalCont {
-        height: 700px;
     }
 }
 
@@ -614,6 +619,11 @@ main {
 
     .img--technicalCont {
         height: 600px;
+    }
+
+    .article--infrastructure,
+    .block--rightTechnicalCont {
+        left: clamp(450px, 46vw, 900px);
     }
 }
 
