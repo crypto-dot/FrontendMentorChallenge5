@@ -917,3 +917,65 @@ main {
         background-position: top -125% left 50%;
     }
 }
+
+@media (min-width:1330px) {
+    .img--productDesc {
+        right: unset;
+        left: clamp(620px, 51vw, 900px);
+    }
+}
+
+@media (min-width: 1800px) {
+    .section--productDesc {
+        padding-top: unset;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+    .header--productDesc {
+        width: unset;
+        padding-right: unset;
+    }
+
+    .h1--productDesc {
+        text-align: unset;
+    }
+
+    .article--infrastructure,
+    .block--rightTechnicalCont {
+        padding-top: unset;
+    }
+
+    .img--infrastructure,
+    .article--infrastructure,
+    .block--rightTechnicalCont,
+    .img--productDesc,
+    .img--technicalCont {
+        position: unset;
+    }
+
+    .block--sectionWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        max-height: var(--section-infrastructure-height);
+    }
+
+    .section--technicalCont {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .block--rightTechnicalCont {
+        margin-right: 6.4rem;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: unset;
+    }
+
+
+}
