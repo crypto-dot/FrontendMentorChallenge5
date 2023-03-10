@@ -778,8 +778,9 @@ main {
 
 
     .button--mobileNav {
+        position: absolute;
+        top: 3.5rem;
         cursor: pointer;
-        overflow: hidden;
         display: block;
     }
 
